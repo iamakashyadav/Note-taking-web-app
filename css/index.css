@@ -1,0 +1,48 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #8BC6EC;
+    background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.auth {
+    /* background-color: #4798ce; */
+    background-color: #4798ce;
+    width: 400px;
+    height: 50%;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 10px 10px #888888;
+}
+
+.auth a {
+    display: block;
+    width: 45%;
+    font-size: 15px;
+    line-height: 40px;
+    text-decoration: none;
+    border: 1.5px solid black;
+    border-radius: 20px;
+    text-align: center;
+    margin: 20px 0;
+    color: black;
+}
+
+.auth a:hover {
+    background-color: skyblue;
+    transform: scalex(1.2);
+    transition: 0.2s;
+}

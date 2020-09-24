@@ -1,0 +1,269 @@
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #8BC6EC;
+    background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
+    min-height: 100vh;
+}
+
+.take-note{
+    /* border: 2px solid black; */
+    background-color: #8BC6EC;
+    background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 5px;
+    position: sticky;
+    top: 0;
+}
+
+.take-note .user{
+    /* border: 1px solid black; */
+    height: 50px;    
+    font-size: 1.2rem;
+    font-weight: bolder;
+    text-align: center;
+    margin-bottom: 10px;
+    padding-top: 10px;
+    display: flex;
+}
+
+.take-note .user p{
+    width: 90%;
+    text-align: left;
+    padding-left: 10px;    
+}
+
+.take-note .user p span{
+    font-size: 1.5rem;
+    color: black;
+}
+
+.take-note .user a{
+    text-decoration: none;
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 8px 5px 0 5px;
+}
+
+.take-note .user a:hover{
+    background-color: #4798ce;
+}
+
+.take-note input,textarea{
+    display: block;
+    width: 50%;
+    border: none;
+    outline: none;
+    margin: 0 auto 10px auto;
+    font-size: 1.5rem;
+    padding: 0 10px;
+    border-radius: 10px;
+}
+
+.take-note textarea{
+    width: 50%;
+}
+
+.take-note input{
+    line-height: 50px;
+}
+
+.take-note button{
+    cursor: pointer;
+    width: 10%;
+    font-size: 1.1rem;
+    line-height: 25px;
+    font-weight: bolder;
+    border-radius: 10px;
+    outline: none;
+}
+
+.take-note button:hover{
+    background-color:#4798ce;
+}
+
+.notes{
+    /* border: 2px solid black; */
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.notes .note{
+    border: 2px solid #20394b;
+    width: 300px;
+    height: 185px;
+    margin: 20px;
+    border-radius: 10px;
+    padding:5px 5px 0 5px;
+    background-color: whitesmoke;
+}
+
+.notes .note p{
+    text-align: justify;
+}
+
+.notes .note .note-edit{
+    visibility: hidden;
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0 5px 0;
+    height: 25px;
+}
+
+.notes .note .note-edit button{
+    /* border: 1px solid red; */
+    width: 30%;
+    background: transparent;
+    cursor: pointer;
+    font-weight: bolder;
+    outline: none;
+    border-radius: 5px;
+}
+
+.notes .note .note-edit form{
+    width: 30%;
+}
+
+.notes .note .note-edit form button{
+    width: 100%;
+}
+
+.notes .note .note-edit button:hover{
+    background-color: #4798ce;
+}
+
+
+.notes .note .note-edit button img{
+    display:block;
+    height: auto;
+    width: 30%;
+    margin: auto;
+}
+
+.notes .note:hover .note-edit{
+    visibility: visible;
+}
+
+.edit-modal{
+    background-color: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    height: 100vh;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.edit-modal .edit-box{    
+    width: 600px;
+    min-height: 50%;
+    background-color: #8BC6EC;
+    background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
+    position: relative;
+    padding-top: 45px;
+    border-radius: 20px;
+}
+
+.edit-modal .edit-box form{
+    text-align: center;
+}
+
+.edit-modal .edit-box form input,textarea{
+    display: block;
+    width: 80%;
+    border: none;
+    outline: none;
+    margin: 0 auto 10px auto;
+    font-size: 1.5rem;
+    padding: 0 10px;
+    border-radius: 10px;
+}
+
+.edit-modal .edit-box form button{
+    cursor: pointer;
+    width: 15%;
+    font-size: 1.1rem;
+    line-height: 25px;
+    font-weight: bolder;
+    border-radius: 10px;
+    outline: none;
+}
+
+.edit-modal .edit-box form button:hover{
+    background-color:#4798ce;
+}
+
+.edit-modal .edit-box .edit-modal-close{
+    position: absolute;
+    top: 3px;
+    right: 20px;
+    color: white;
+    cursor: pointer;
+    font-size: 2rem;
+    font-weight: bolder;
+    transform: rotate(45deg);
+}
+
+
+.show-modal{
+    background-color: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    height: 100vh;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    display: none;
+}
+
+.show-modal .show-box{  
+    /* border: 2px solid red;   */
+    width: 700px;
+    height: 70%;
+    background-color: #8BC6EC;
+    background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
+    position: relative;
+    padding: 45px 20px 10px 20px;
+    border-radius: 20px;    
+    overflow-y: auto;
+    margin-top: 100px;
+}
+
+.show-modal .show-box h2{
+    font-size: 30px;
+}
+
+.show-modal .show-box p{
+    margin-top: 10px;
+    font-size: 20px;
+    text-align: justify;
+}
+
+.show-modal .show-box .show-modal-close{
+    position: absolute;
+    top: 3px;
+    right: 20px;
+    color: white;
+    cursor: pointer;
+    font-size: 2rem;
+    font-weight: bolder;
+    transform: rotate(45deg);
+}
