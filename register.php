@@ -37,9 +37,11 @@
             }else{                            
                 $name=mysqli_real_escape_string($conn,$_POST['name']);
                 $password=mysqli_real_escape_string($conn,$_POST['password']);
+                //Encrypt the password before inserting into DataBase
+                $hasedPassword =  password_hash($password, PASSWORD_DEFAULT);
 
                 // make sql query
-                $query = "INSERT INTO user(email,password,name) VALUES('$email','$password','$name')";
+                $query = "INSERT INTO user(email,password,name) VALUES('$email','$hasedPassword','$name')";
 
                 if(mysqli_query($conn, $query)){
                     //success

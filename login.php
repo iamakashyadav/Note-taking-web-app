@@ -37,13 +37,13 @@
             }else{    
                 
                 // escape sql chars
-                $password=mysqli_real_escape_string($conn,$_POST['password']);
+                $InputPassword=mysqli_real_escape_string($conn,$_POST['password']);
                 
                 //password which is fetch from database
-                $db_password=$isEmailPresent['0']['password'];    
+                $hashedDbPassword=$isEmailPresent['0']['password'];    
                 
                 //Password Matching
-                if($db_password==$password){
+                if(password_verify($InputPassword,$hashedDbPassword)){
                     
                     //to start the session
                     session_start();
